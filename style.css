@@ -1,0 +1,14 @@
+body {
+    font-family: serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.navbar-logo {
+    max-width: 80px;
+    /* size you want */
+    border-radius: 50%;
+    /* circle */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    /* optional shadow */
+}
