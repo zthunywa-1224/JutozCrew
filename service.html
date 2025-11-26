@@ -63,6 +63,27 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<button type="button" onclick="payWithPaystack()">Pay Now</button>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+  function payWithPaystack(){
+    var handler = PaystackPop.setup({
+      key: 'pk_test_838185734bbf9f7686813ffe3aabe78e796af1b2', // Replace with your copied Test Public Key
+      email: 'customer@example.com',
+      amount: 5000, // 50 ZAR = 5000 cents
+      currency: "ZAR",
+      ref: 'REF-'+Math.floor(Math.random()*1000000000), // unique reference
+      callback: function(response){
+        alert('Payment successful! Reference: ' + response.reference);
+      },
+      onClose: function(){
+        alert('Transaction was not completed.');
+      }
+    });
+    handler.openIframe();
+  }
+</script>
 <div class="container-fluid">
   <div class="row">
     <div class="col col-sm-12 col-md-3 mt-4 col-lg-3">
