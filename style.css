@@ -1,0 +1,23 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.container .row .col {
+    gap: 10px;
+}
+
+.navbar-logo {
+    max-width: 80px;
+    /* size you want */
+    border-radius: 50%;
+    /* circle */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    /* optional shadow */
+}
+
+.navbar .container a span {
+    font-weight: bold;
+    font-size: 25px;
+}

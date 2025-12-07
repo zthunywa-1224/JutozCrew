@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing – Service Parts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <style>
+        body {font-family: Arial, sans-serif; margin: 20px;}
+        .plan {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .plan h3 {margin-top: 0;}
+        .navbar-logo {
+      max-width: 80px;
+      height: 80px;               /* keep aspect ratio */
+    }
+     .pricing-img{
+      width:100%;
+      height:400px;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark my-2 mx-2 mb-4 bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="pricing.html">
+      <img src="img/fuel-filter-2.jpg" class="navbar-logo rounded-circle" alt="tea and coffee"><br> Pricing Plan
+    </a>
+    <button class="navbar-toggler" title="btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html" target="_blank">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html" target="_blank">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html" target="_blank">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html" target="_blank">service</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html" target="_blank">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="order.html" target="_blank">Order</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html" target="_blank">Product</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Our Pricing Project plan</h1>
+      <img src="img/auto-spare.jpg" class="pricing-img" alt="pricing image">
+    </div>
+  </div>
+</div>
+    <div class="div text-center">
+    <h2>Our Pricing</h2>
+    <p>Choose the plan that works best for you.</p>
+    </div>
+
+    <div class="plan">
+        <h3>Basic</h3>
+        <p><strong>R199</strong> per month</p>
+        <ul>
+            <li>Access to standard parts</li>
+            <li>Free shipping on orders > R500</li>
+        </ul>
+    </div>
+
+    <div class="plan">
+        <h3>Pro</h3>
+        <p><strong>R399</strong> per month</p>
+        <ul>
+            <li>Everything in Basic</li>
+            <li>Discounts up to 15%</li>
+            <li>Priority support</li>
+        </ul>
+    </div>
+
+    <div class="plan">
+        <h3>Enterprise</h3>
+        <p><strong>Custom</strong></p>
+        <ul>
+            <li>Dedicated account manager</li>
+            <li>Bulk pricing on all parts</li>
+            <li>24/7 support</li>
+        </ul>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+    <button type="button" onclick="payWithPaystack()" class="btn btn-primary">Pay Now</button>
+</div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+    function payWithPaystack(){
+        var handler = PaystackPop.setup({
+            key: 'pk_test_838185734bbf9f7686813ffe3aabe78e796af1b2',
+            email: 'customer@example.com',
+            amount: 5000,
+            currency: "ZAR",
+            ref: 'REF-'+Math.floor(Math.random()*1000000000),
+            callback: function(response){
+                alert('Payment successful! Reference: ' + response.reference);
+            },
+            onClose: function(){
+                alert('Transaction was not completed.');
+            }
+        });
+        handler.openIframe();
+    }
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
